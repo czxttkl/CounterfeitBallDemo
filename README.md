@@ -16,5 +16,8 @@ How to read this demo?
 
   Since it is a demo, we construct the object manually. Actually you need to program your own code to generate your  TernaryDecisionTree Object, efficiently and correctly.
 
-2. 
+2. Create a Gson instance to convert TernaryDecisionTree Java Object into JSON String.  [Gson](http://code.google.com/p/google-gson/) is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. 
 
+3. We convert the JSON String generated in part2 to a TernaryDecisionTree Java Object back.
+
+4. It is the part where you should verify whether the restored TernaryDecisionTree meet requirements in your mind.
