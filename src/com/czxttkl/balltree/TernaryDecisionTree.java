@@ -1,6 +1,6 @@
 package com.czxttkl.balltree;
 
-public class BallTree implements Node{
+public class TernaryDecisionTree implements Node{
 	public int[] left_balls;
 	public int[] right_balls;
 	public Object heavier;

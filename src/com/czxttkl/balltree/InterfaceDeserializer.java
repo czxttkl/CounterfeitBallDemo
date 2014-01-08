@@ -19,13 +19,12 @@ public class InterfaceDeserializer implements JsonDeserializer<Node> {
 		if (json.isJsonObject()) {
 			JsonObject jsonObject = json.getAsJsonObject();
 			if (jsonObject.get("left_balls") != null) {
-				System.out.println(jsonObject.toString());
-				BallTree bt = new BallTree();
-				bt.left_balls = getJsonArray(jsonObject.get("left_balls"));
-				bt.right_balls = getJsonArray(jsonObject.get("right_balls"));
-				bt.heavier = context.deserialize(jsonObject.get("heavier"), BallTree.class);
-				bt.lighter = context.deserialize(jsonObject.get("lighter"), BallTree.class);
-				bt.equal = context.deserialize(jsonObject.get("equal"), BallTree.class);
+				TernaryDecisionTree bt = new TernaryDecisionTree();
+				bt.left_balls = jsonArrayToIntArray(jsonObject.get("left_balls"));
+				bt.right_balls = jsonArrayToIntArray(jsonObject.get("right_balls"));
+				bt.heavier = context.deserialize(jsonObject.get("heavier"), TernaryDecisionTree.class);
+				bt.lighter = context.deserialize(jsonObject.get("lighter"), TernaryDecisionTree.class);
+				bt.equal = context.deserialize(jsonObject.get("equal"), TernaryDecisionTree.class);
 				return bt;
 			} else {
 				if (jsonObject.get("counterfeit_ball")!=null) {
@@ -42,7 +41,7 @@ public class InterfaceDeserializer implements JsonDeserializer<Node> {
 	}
 
 	
-	private int[] getJsonArray(JsonElement je) {
+	private int[] jsonArrayToIntArray(JsonElement je) {
 		JsonArray ja = je.getAsJsonArray();
 		Iterator<JsonElement> iterator = ja.iterator();
 		int[] balls = new int[ja.size()];
