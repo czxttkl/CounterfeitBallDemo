@@ -5,7 +5,7 @@ CounterfeitBallDemo
 Import
 --------------------------------------
 1. Clone the project to your local
-2. Run it and read it in your favorite way
+2. Run it and read it in your favorite way. It is at hand for Eclipse users.
 
 
 How to read this demo?
@@ -21,3 +21,15 @@ How to read this demo?
 3. We convert the JSON String generated in part2 to a TernaryDecisionTree Java Object back.
 
 4. It is the part where you should verify whether the restored TernaryDecisionTree meet requirements in your mind.
+
+
+For real debates
+--------------------------------------
+1. If you are a verifier for CounterfeitBall(n,q), you construct your TernaryDecisionTree and make it into JSON String. Then you give your opposite that String.
+2. If you are a falsifier, after receiving the verifier's JSON String, you convert it back to a TernaryDecisionTree Object and do your verification.
+  
+  
+  
+<br>
+<br>
+Happy Debating
