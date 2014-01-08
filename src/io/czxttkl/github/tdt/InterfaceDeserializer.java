@@ -1,4 +1,4 @@
-package com.czxttkl.balltree;
+package io.czxttkl.github.tdt;
 
 import java.lang.reflect.Type;
 import java.util.Iterator;
@@ -18,6 +18,8 @@ public class InterfaceDeserializer implements JsonDeserializer<Node> {
 	public Node deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
 		if (json.isJsonObject()) {
 			JsonObject jsonObject = json.getAsJsonObject();
+			
+			// if left_balls attr is not null, it is deserialized as TernaryDecisonTree class
 			if (jsonObject.get("left_balls") != null) {
 				TernaryDecisionTree bt = new TernaryDecisionTree();
 				bt.left_balls = jsonArrayToIntArray(jsonObject.get("left_balls"));
@@ -27,6 +29,7 @@ public class InterfaceDeserializer implements JsonDeserializer<Node> {
 				bt.equal = context.deserialize(jsonObject.get("equal"), TernaryDecisionTree.class);
 				return bt;
 			} else {
+				// if left_balls attr is not null, it is deserialized as Leaf class
 				if (jsonObject.get("counterfeit_ball")!=null) {
 					int counterfeit_ball = jsonObject.get("counterfeit_ball").getAsInt();
 					String weight = jsonObject.get("weight").getAsString();

@@ -1,4 +1,4 @@
-package com.czxttkl.balltree;
+package io.czxttkl.github.tdt;
 
 public class Leaf implements Node{
 	public int counterfeit_ball;

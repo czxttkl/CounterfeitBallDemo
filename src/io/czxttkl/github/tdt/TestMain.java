@@ -1,4 +1,4 @@
-package com.czxttkl.balltree;
+package io.czxttkl.github.tdt;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -45,5 +45,6 @@ public class TestMain {
 		// Restore TernaryDecisionTree Java Object from JSON String
 		TernaryDecisionTree tdtRestored = gson.fromJson(jsonString, TernaryDecisionTree.class);
 
+		// Do your verification here...
 	}
 }

@@ -1,4 +1,4 @@
-package com.czxttkl.balltree;
+package io.czxttkl.github.tdt;
 
 public class TernaryDecisionTree implements Node{
 	public int[] left_balls;
