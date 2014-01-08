@@ -37,7 +37,7 @@ public class TestMain {
 		tdt.lighter = tdtRight;
 		tdt.equal = tdtEqual;
 
-		// Create a Gson instance to convery TernaryDecisionTree Java Object into JSON String
+		// Create a Gson instance to convert TernaryDecisionTree Java Object into JSON String
 		Gson gson = new GsonBuilder().registerTypeAdapter(TernaryDecisionTree.class, new InterfaceDeserializer()).create();
 		String jsonString = gson.toJson(tdt, TernaryDecisionTree.class);
 		System.out.println(jsonString);
