@@ -27,7 +27,7 @@ public class InterfaceDeserializer implements JsonDeserializer<Node> {
 				bt.equal = context.deserialize(jsonObject.get("equal"), TernaryDecisionTree.class);
 				return bt;
 			} else {
-				// if left_balls attr is not null, it is deserialized as Leaf class
+				// if counterfeit_ball attr is not null, it is deserialized as Leaf class
 				if (jsonObject.get("counterfeit_ball")!=null) {
 					int counterfeit_ball = jsonObject.get("counterfeit_ball").getAsInt();
 					String weight = jsonObject.get("weight").getAsString();
